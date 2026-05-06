@@ -1,0 +1,832 @@
+/* ============================================================================
+   STUDENT E-PORTFOLIO WEBSITE — COMPONENT STYLES
+   BEM-based component styling for navigation, sections, media viewers, and cards
+   ============================================================================ */
+
+/* ============================================================================
+   1. NAVIGATION COMPONENT
+   ============================================================================ */
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-4) var(--spacing-6);
+  background-color: var(--color-bg-primary);
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 0;
+  z-index: var(--z-sticky);
+  box-shadow: var(--shadow-sm);
+}
+
+.nav__brand {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.nav__hamburger {
+  display: none;
+  flex-direction: column;
+  gap: var(--spacing-1);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--spacing-2);
+  color: var(--color-text-primary);
+  font-size: var(--font-size-2xl);
+  line-height: 1;
+  transition: color var(--transition-fast);
+}
+
+.nav__hamburger:hover {
+  color: var(--color-primary);
+}
+
+.nav__hamburger:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: var(--radius-md);
+}
+
+.nav__theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: var(--font-size-xl);
+  transition: transform var(--transition-fast);
+  margin-left: var(--spacing-2);
+}
+
+.nav__theme-toggle:hover {
+  transform: scale(1.1);
+}
+
+.nav__theme-toggle:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: var(--radius-md);
+}
+
+.theme-icon {
+  display: inline-block;
+  transition: transform var(--transition-base);
+}
+
+.nav__theme-toggle.dark-mode-active .theme-icon {
+  transform: rotate(180deg);
+}
+
+.nav__list {
+  display: flex;
+  list-style: none;
+  gap: var(--spacing-6);
+  margin: 0;
+  padding: 0;
+  flex-grow: 1;
+  justify-content: center;
+}
+
+.nav__link {
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-sm);
+  transition: color var(--transition-fast);
+  position: relative;
+  padding-bottom: var(--spacing-1);
+}
+
+.nav__link:hover {
+  color: var(--color-primary);
+}
+
+.nav__link:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 4px;
+  border-radius: var(--radius-sm);
+}
+
+.nav__link--active {
+  color: var(--color-primary);
+  font-weight: var(--font-weight-bold);
+}
+
+.nav__link--active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: var(--color-primary);
+  border-radius: var(--radius-sm);
+}
+
+/* Mobile nav state */
+.nav--open .nav__list {
+  display: flex;
+}
+
+/* ============================================================================
+   2. SECTION COMPONENTS
+   ============================================================================ */
+
+.section__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 var(--spacing-4);
+}
+
+/* Welcome Section Specific Styles */
+#welcome .section__container {
+  padding: var(--spacing-12) var(--spacing-4);
+  text-align: center;
+}
+
+.welcome__name {
+  font-size: var(--font-size-5xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  margin: 0 0 var(--spacing-4) 0;
+  line-height: var(--line-height-tight);
+}
+
+.welcome__tagline {
+  font-size: var(--font-size-2xl);
+  color: var(--color-text-secondary);
+  margin: 0 0 var(--spacing-6) 0;
+  font-weight: var(--font-weight-medium);
+}
+
+.welcome__message {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-relaxed);
+  max-width: 700px;
+  margin: 0 auto var(--spacing-8) auto;
+  padding: 0 var(--spacing-4);
+}
+
+.welcome__cta {
+  display: flex;
+  gap: var(--spacing-4);
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: var(--spacing-8);
+}
+
+.welcome__cta .btn {
+  padding: var(--spacing-4) var(--spacing-8);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-bold);
+}
+
+.section__heading {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-8);
+  padding-bottom: var(--spacing-4);
+  border-bottom: 2px solid var(--color-primary);
+  line-height: var(--line-height-tight);
+}
+
+.section__content {
+  width: 100%;
+}
+
+/* ============================================================================
+   3. PDF VIEWER COMPONENT
+   ============================================================================ */
+
+.pdf-viewer {
+  position: relative;
+  width: 100%;
+  min-height: 600px;
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: var(--spacing-8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pdf-viewer--loading {
+  background-color: var(--color-bg-secondary);
+}
+
+.pdf-viewer__frame {
+  width: 100%;
+  height: 100%;
+  min-height: 600px;
+  border: none;
+  display: block;
+}
+
+.pdf-viewer__spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 48px;
+  height: 48px;
+  border: 4px solid var(--color-border);
+  border-top-color: var(--color-primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  z-index: 10;
+}
+
+.pdf-viewer__error {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--color-bg-primary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-8);
+  max-width: 400px;
+  text-align: center;
+  box-shadow: var(--shadow-md);
+  z-index: 20;
+}
+
+.pdf-viewer__error p {
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-6);
+  font-size: var(--font-size-base);
+}
+
+.pdf-viewer__error a,
+.pdf-viewer__error button {
+  display: inline-block;
+  padding: var(--spacing-3) var(--spacing-6);
+  margin: 0 var(--spacing-2);
+  border-radius: var(--radius-md);
+  font-weight: var(--font-weight-medium);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+  border: none;
+  font-size: var(--font-size-sm);
+}
+
+.pdf-viewer__error a {
+  background-color: var(--color-neutral-200);
+  color: var(--color-text-primary);
+}
+
+.pdf-viewer__error a:hover {
+  background-color: var(--color-neutral-300);
+  text-decoration: none;
+}
+
+.pdf-viewer__error button {
+  background-color: var(--color-primary);
+  color: var(--color-text-inverse);
+}
+
+.pdf-viewer__error button:hover {
+  background-color: var(--color-primary-dark);
+}
+
+.pdf-viewer__error button:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* ============================================================================
+   4. VIDEO PLAYER COMPONENT
+   ============================================================================ */
+
+.video-player {
+  position: relative;
+  width: 100%;
+  margin-bottom: var(--spacing-8);
+  background-color: var(--color-neutral-900);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.video-player__wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+}
+
+.video-player__wrapper iframe,
+.video-player__wrapper video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+.video-player__error {
+  position: relative;
+  width: 100%;
+  padding: var(--spacing-12) var(--spacing-4);
+  background-color: var(--color-neutral-900);
+  border-radius: var(--radius-lg);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+}
+
+.video-player__error p {
+  color: var(--color-text-inverse);
+  font-size: var(--font-size-base);
+  margin: 0;
+}
+
+/* ============================================================================
+   5. REFLECTIONS COMPONENT
+   ============================================================================ */
+
+.reflections__tabs {
+  display: flex;
+  gap: var(--spacing-2);
+  margin-bottom: var(--spacing-8);
+  border-bottom: 1px solid var(--color-border);
+  flex-wrap: wrap;
+}
+
+.reflections__tab {
+  padding: var(--spacing-4) var(--spacing-6);
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  color: var(--color-text-secondary);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-base);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  position: relative;
+  margin-bottom: -1px;
+}
+
+.reflections__tab:hover {
+  color: var(--color-primary);
+}
+
+.reflections__tab:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: var(--radius-md);
+}
+
+.reflections__tab--active {
+  color: var(--color-primary);
+  border-bottom-color: var(--color-primary);
+  font-weight: var(--font-weight-bold);
+}
+
+.reflection-panel {
+  display: none;
+  animation: fadeIn var(--transition-base);
+}
+
+.reflection-panel--active {
+  display: block;
+}
+
+.reflection-panel h3 {
+  font-size: var(--font-size-2xl);
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-4);
+}
+
+.reflection-panel__body {
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-relaxed);
+  font-size: var(--font-size-base);
+}
+
+.reflection-panel__body p {
+  margin-bottom: var(--spacing-4);
+}
+
+.reflection-panel__body p:last-child {
+  margin-bottom: 0;
+}
+
+/* ============================================================================
+   6. CARD COMPONENT (for Work Experience, Seminars, Organizations, Awards, JRU)
+   ============================================================================ */
+
+.card {
+  background-color: var(--color-bg-primary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-6);
+  margin-bottom: var(--spacing-6);
+  transition: all var(--transition-fast);
+  box-shadow: var(--shadow-sm);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-primary-light);
+  transform: translateY(-2px);
+}
+
+.card__title {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-2);
+  line-height: var(--line-height-tight);
+}
+
+.card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-4);
+  margin-bottom: var(--spacing-4);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+.card__meta-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+}
+
+.card__meta-label {
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-tertiary);
+}
+
+.card__body {
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-relaxed);
+  font-size: var(--font-size-base);
+}
+
+.card__body p {
+  margin-bottom: var(--spacing-3);
+}
+
+.card__body p:last-child {
+  margin-bottom: 0;
+}
+
+.card__body ul,
+.card__body ol {
+  margin-left: var(--spacing-4);
+  margin-bottom: var(--spacing-3);
+}
+
+.card__body li {
+  margin-bottom: var(--spacing-2);
+}
+
+/* ============================================================================
+   7. ANIMATIONS
+   ============================================================================ */
+
+@keyframes spin {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ============================================================================
+   8. BUTTON UTILITIES (for error states and general use)
+   ============================================================================ */
+
+.btn {
+  display: inline-block;
+  padding: var(--spacing-3) var(--spacing-6);
+  border-radius: var(--radius-md);
+  font-weight: var(--font-weight-medium);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+  border: none;
+  font-size: var(--font-size-sm);
+  text-align: center;
+}
+
+.btn:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.btn--primary {
+  background-color: var(--color-primary);
+  color: var(--color-text-inverse);
+}
+
+.btn--primary:hover {
+  background-color: var(--color-primary-dark);
+}
+
+.btn--secondary {
+  background-color: var(--color-neutral-200);
+  color: var(--color-text-primary);
+}
+
+.btn--secondary:hover {
+  background-color: var(--color-neutral-300);
+}
+
+.btn--tertiary {
+  background-color: transparent;
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+}
+
+.btn--tertiary:hover {
+  background-color: var(--color-primary-light);
+}
+
+/* ============================================================================
+   9. UTILITY CLASSES FOR COMPONENT LAYOUT
+   ============================================================================ */
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--spacing-6);
+  margin-bottom: var(--spacing-8);
+}
+
+.cards-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-6);
+  margin-bottom: var(--spacing-8);
+}
+
+/* ============================================================================
+   10. ACCESSIBILITY & FOCUS STATES
+   ============================================================================ */
+
+/* Ensure all interactive elements have visible focus states */
+button:focus,
+a:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: more) {
+  .nav__link--active::after {
+    height: 3px;
+  }
+
+  .reflections__tab--active {
+    border-bottom-width: 4px;
+  }
+
+  .card {
+    border-width: 2px;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+
+/* ============================================================================
+   11. WELCOME SECTION STYLES
+   ============================================================================ */
+
+.welcome__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.5) 0%, rgba(37, 99, 235, 0.3) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+#welcome {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  overflow: hidden;
+}
+
+#welcome::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.5) 0%, rgba(37, 99, 235, 0.3) 100%);
+  z-index: 1;
+}
+
+.welcome__content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  max-width: 800px;
+  padding: var(--spacing-8);
+  color: var(--color-text-inverse);
+}
+
+.welcome__name {
+  font-size: var(--font-size-5xl);
+  font-weight: var(--font-weight-bold);
+  color: #ffffff;
+  margin-bottom: var(--spacing-4);
+  line-height: var(--line-height-tight);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.welcome__tagline {
+  font-size: var(--font-size-2xl);
+  color: #e0e7ff;
+  margin-bottom: var(--spacing-6);
+  font-weight: var(--font-weight-medium);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.welcome__message {
+  font-size: var(--font-size-lg);
+  color: #f3f4f6;
+  line-height: var(--line-height-relaxed);
+  margin-bottom: var(--spacing-8);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.welcome__cta {
+  display: flex;
+  gap: var(--spacing-4);
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: var(--spacing-8);
+}
+
+.welcome__cta .btn {
+  padding: var(--spacing-4) var(--spacing-8);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-bold);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transition: all var(--transition-fast);
+}
+
+.welcome__cta .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* ============================================================================
+   12. ABOUT SECTION STYLES
+   ============================================================================ */
+
+.about__wrapper {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--spacing-8);
+  align-items: start;
+}
+
+.about__text p {
+  margin-bottom: var(--spacing-4);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-secondary);
+}
+
+.about__text p:last-child {
+  margin-bottom: 0;
+}
+
+.about__skills h3 {
+  font-size: var(--font-size-xl);
+  margin-bottom: var(--spacing-4);
+  color: var(--color-text-primary);
+}
+
+.skills-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skills-list li {
+  padding: var(--spacing-3) var(--spacing-4);
+  background-color: var(--color-bg-secondary);
+  border-left: 3px solid var(--color-primary);
+  margin-bottom: var(--spacing-2);
+  border-radius: var(--radius-md);
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-medium);
+}
+
+/* ============================================================================
+   13. ACADEMICS SECTION STYLES
+   ============================================================================ */
+
+.academics__section {
+  margin-bottom: var(--spacing-12);
+}
+
+.academics__section h3 {
+  font-size: var(--font-size-2xl);
+  margin-bottom: var(--spacing-4);
+  color: var(--color-text-primary);
+}
+
+.academics__section p {
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-6);
+  font-size: var(--font-size-base);
+}
+
+/* ============================================================================
+   14. EXPERIENCE LIST STYLES
+   ============================================================================ */
+
+.experience-list {
+  list-style: none;
+  padding: 0;
+  margin: var(--spacing-4) 0 var(--spacing-8) 0;
+}
+
+.experience-list li {
+  padding: var(--spacing-3) 0 var(--spacing-3) var(--spacing-6);
+  border-left: 2px solid var(--color-primary);
+  margin-bottom: var(--spacing-4);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-relaxed);
+}
+
+.experience-list li strong {
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-semibold);
+}
+
+.jru-experience__text h3 {
+  font-size: var(--font-size-xl);
+  margin-top: var(--spacing-8);
+  margin-bottom: var(--spacing-4);
+  color: var(--color-text-primary);
+}
+
+.jru-experience__text p {
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-relaxed);
+  margin-bottom: var(--spacing-4);
+}
+
+.jru-experience__text p:first-child {
+  margin-bottom: var(--spacing-6);
+}

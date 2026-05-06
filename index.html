@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John Andrew Garcia - Student E-Portfolio</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+    <!-- Three.js Cursor Canvas -->
+    <canvas id="cursor-canvas" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1;"></canvas>
+
+    <nav class="nav" id="main-nav">
+        <div class="nav__brand">John Andrew Garcia</div>
+        <button class="nav__hamburger" aria-label="Toggle menu">☰</button>
+        <button class="nav__theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+            <span class="theme-icon">🌙</span>
+        </button>
+        <ul class="nav__list">
+            <li><a class="nav__link" href="#welcome">Home</a></li>
+            <li><a class="nav__link" href="#about">About Me</a></li>
+            <li><a class="nav__link" href="#academics">Academics</a></li>
+            <li><a class="nav__link" href="#awards">Awards</a></li>
+            <li><a class="nav__link" href="#reflections">Reflections</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="section section--active" id="welcome" aria-labelledby="welcome-heading" style="background-image: url('assets/images/profile.jpg'); background-size: cover; background-position: center; background-attachment: fixed;">
+            <div class="welcome__overlay">
+                <div class="welcome__content">
+                    <h1 class="welcome__name">John Andrew Garcia</h1>
+                    <p class="welcome__tagline">Computer Programming Student | JRU</p>
+                    <p class="welcome__message">
+                        Welcome to my e-portfolio. This is a comprehensive showcase of my academic journey, professional experiences, and personal growth throughout my Computer Programming studies. Explore my work, learn about my background, and discover the projects and reflections that have shaped my development as a programmer.
+                    </p>
+                    <div class="welcome__cta">
+                        <a href="#academics" class="btn btn--primary">View My Work</a>
+                        <a href="#about" class="btn btn--secondary">Learn About Me</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="about" aria-labelledby="about-heading">
+            <div class="section__container">
+                <h2 class="section__heading" id="about-heading">About Me</h2>
+                <div class="section__content">
+                    <div class="about__wrapper">
+                        <div class="about__text">
+                            <p>
+                                I'm John Andrew Garcia, a dedicated Computer Programming student at Jose Rizal University (JRU). I'm passionate about developing clean, efficient code and solving complex programming challenges. My journey in computer science has equipped me with strong problem-solving skills and a deep understanding of programming fundamentals.
+                            </p>
+                            <p>
+                                Throughout my studies, I've developed proficiency in multiple programming languages and frameworks. I'm committed to continuous learning and staying updated with the latest technologies and best practices in software development. I believe in writing maintainable code and collaborating effectively with teams to deliver quality solutions.
+                            </p>
+                            <p>
+                                Beyond academics, I'm actively involved in community activities and professional development seminars. I'm eager to apply my knowledge in real-world projects and contribute meaningfully to the tech industry.
+                            </p>
+                        </div>
+                        <div class="about__skills">
+                            <h3>Key Skills</h3>
+                            <ul class="skills-list">
+                                <li>Java Programming</li>
+                                <li>Problem Solving</li>
+                                <li>Object-Oriented Programming</li>
+                                <li>Data Structures & Algorithms</li>
+                                <li>Web Development</li>
+                                <li>HTML, CSS, JavaScript</li>
+                                <li>Version Control (Git)</li>
+                                <li>Collaborative Development</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="academics" aria-labelledby="academics-heading">
+            <div class="section__container">
+                <h2 class="section__heading" id="academics-heading">Academics & Relevant Works</h2>
+                <div class="section__content">
+                    <div class="academics__section">
+                        <h3>Prelim Term - Selection Structured & Iterative Structured</h3>
+                        <p>Foundational programming concepts covering selection and iterative structures:</p>
+                        <div class="academics__topics">
+                            <div class="topic-card">
+                                <h4>Selection Structured</h4>
+                                <ul>
+                                    <li>If-Else Statements</li>
+                                    <li>Switch Statements</li>
+                                    <li>Conditional Logic</li>
+                                </ul>
+                            </div>
+                            <div class="topic-card">
+                                <h4>Iterative Structured</h4>
+                                <ul>
+                                    <li>While Loops</li>
+                                    <li>Do-While Loops</li>
+                                    <li>For Loops</li>
+                                    <li>Nested Loops</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="academics__section">
+                        <h3>Midterm - Functions/Methods</h3>
+                        <p>Comprehensive coverage of function and method concepts:</p>
+                        <div class="academics__topics">
+                            <div class="topic-card">
+                                <h4>Functions With No Parameters</h4>
+                                <ul>
+                                    <li>Basic Function Definition</li>
+                                    <li>Function Calls</li>
+                                    <li>Return Values</li>
+                                </ul>
+                            </div>
+                            <div class="topic-card">
+                                <h4>Functions With Parameters</h4>
+                                <ul>
+                                    <li>Parameter Passing</li>
+                                    <li>Multiple Parameters</li>
+                                    <li>Return Values</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="academics__section">
+                        <h3>Final Term - Functions With Arrays</h3>
+                        <p>Advanced programming with arrays and complex data structures:</p>
+                        <div class="academics__topics">
+                            <div class="topic-card">
+                                <h4>1D Arrays</h4>
+                                <ul>
+                                    <li>Array Declaration & Initialization</li>
+                                    <li>Array Traversal</li>
+                                    <li>Array Manipulation</li>
+                                </ul>
+                            </div>
+                            <div class="topic-card">
+                                <h4>Functions With Arrays</h4>
+                                <ul>
+                                    <li>Passing Arrays to Functions</li>
+                                    <li>Array Processing</li>
+                                    <li>Returning Arrays</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="academics__section">
+                        <h3>Other Activities & Assessments</h3>
+                        <p>Additional coursework and evaluations:</p>
+                        <div class="activities-list">
+                            <div class="activity-item">
+                                <h4>Case Study - On the Spot Coding</h4>
+                                <p>Real-time coding assessment testing problem-solving skills under pressure.</p>
+                                <span class="activity-status">Completed</span>
+                            </div>
+                            <div class="activity-item">
+                                <h4>Machine Problem on Stacks and Queues & Sorting</h4>
+                                <p>Implementation of data structures and sorting algorithms.</p>
+                                <span class="activity-status">Completed</span>
+                            </div>
+                            <div class="activity-item">
+                                <h4>Final Term Quiz 1</h4>
+                                <p>Comprehensive assessment of final term concepts and applications.</p>
+                                <span class="activity-status">Completed</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="academics__section">
+                        <h3>Compiled Academic Work</h3>
+                        <p>All programming assignments, machine problems, activities, and projects compiled in one document:</p>
+                        <div class="pdf-viewer" data-pdf="assets/pdfs/academic-work.pdf"></div>
+                    </div>
+                    
+                    <div class="academics__section">
+                        <h3>Project Documentation</h3>
+                        <p>Detailed documentation of major projects and implementations:</p>
+                        <div class="pdf-viewer" data-pdf="assets/pdfs/project-documentation.pdf"></div>
+                    </div>
+                    
+                    <div class="academics__section">
+                        <h3>Project Presentation</h3>
+                        <p>Video presentation of capstone/major project:</p>
+                        <div class="video-player" data-video="https://www.youtube.com/watch?v=dQw4w9WgXcQ"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="awards" aria-labelledby="awards-heading">
+            <div class="section__container">
+                <h2 class="section__heading" id="awards-heading">Awards & Recognitions</h2>
+                <div class="section__content">
+                    <div class="cards-list">
+                        <div class="card">
+                            <h3 class="card__title">Dean's List - Academic Excellence</h3>
+                            <div class="card__meta">
+                                <span class="card__meta-item">
+                                    <span class="card__meta-label">Issuer:</span> Jose Rizal University
+                                </span>
+                                <span class="card__meta-item">
+                                    <span class="card__meta-label">Date:</span> 2024
+                                </span>
+                            </div>
+                            <div class="card__body">
+                                <p>Recognized for maintaining excellent academic performance with a GPA above 3.5. This honor reflects consistent dedication to studies and mastery of course material.</p>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <h3 class="card__title">Best Programming Project Award</h3>
+                            <div class="card__meta">
+                                <span class="card__meta-item">
+                                    <span class="card__meta-label">Issuer:</span> JRU Computer Science Department
+                                </span>
+                                <span class="card__meta-item">
+                                    <span class="card__meta-label">Date:</span> May 2024
+                                </span>
+                            </div>
+                            <div class="card__body">
+                                <p>Awarded for developing an innovative Java application that demonstrated excellent problem-solving skills, clean code architecture, and creative implementation of advanced programming concepts.</p>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <h3 class="card__title">Coding Competition - 2nd Place</h3>
+                            <div class="card__meta">
+                                <span class="card__meta-item">
+                                    <span class="card__meta-label">Event:</span> JRU Hackathon 2024
+                                </span>
+                                <span class="card__meta-item">
+                                    <span class="card__meta-label">Date:</span> April 2024
+                                </span>
+                            </div>
+                            <div class="card__body">
+                                <p>Placed 2nd in the university-wide coding competition. Competed against talented programmers and demonstrated strong algorithmic thinking and time management under pressure.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="reflections" aria-labelledby="reflections-heading">
+            <div class="section__container">
+                <h2 class="section__heading" id="reflections-heading">Reflections</h2>
+                <div class="reflections__tabs">
+                    <button class="reflections__tab reflections__tab--active" data-target="prelim">Prelim Term</button>
+                    <button class="reflections__tab" data-target="midterm">Midterm</button>
+                    <button class="reflections__tab" data-target="final">Final Term</button>
+                </div>
+                <div class="reflections__panels">
+                    <article class="reflection-panel reflection-panel--active" id="reflection-prelim">
+                        <h3>Prelim Term Reflection</h3>
+                        <div class="reflection-panel__body">
+                            <p>
+                                The preliminary term was an exciting start to my Computer Programming journey. We covered fundamental concepts including variables, data types, control structures, and basic object-oriented programming principles. I found myself particularly engaged with learning Java syntax and understanding how to structure code logically.
+                            </p>
+                            <p>
+                                One of my key learnings was the importance of writing clean, readable code from the beginning. Through various assignments and machine problems, I realized that good programming practices established early make future development much smoother. I also learned the value of debugging and testing my code thoroughly before submission.
+                            </p>
+                            <p>
+                                The collaborative activities with classmates helped me understand different problem-solving approaches. I discovered that there are often multiple ways to solve a problem, and discussing these approaches with peers broadened my perspective. This term laid a solid foundation for more advanced concepts to come.
+                            </p>
+                        </div>
+                    </article>
+                    <article class="reflection-panel" id="reflection-midterm">
+                        <h3>Midterm Reflection</h3>
+                        <div class="reflection-panel__body">
+                            <p>
+                                The midterm period brought more complex programming challenges. We delved deeper into object-oriented programming, exploring concepts like inheritance, polymorphism, and encapsulation. These concepts initially seemed abstract, but through practical projects, they became clearer and more applicable.
+                            </p>
+                            <p>
+                                I particularly enjoyed working on projects that required designing classes and managing object interactions. The midterm project challenged me to think about software architecture and how to organize code for maintainability and scalability. I learned that good design decisions early on can prevent significant refactoring later.
+                            </p>
+                            <p>
+                                This term also introduced me to more advanced debugging techniques and the importance of understanding error messages. I realized that errors are not failures but opportunities to learn and improve my code. The experience of troubleshooting complex issues has significantly improved my problem-solving skills and patience.
+                            </p>
+                        </div>
+                    </article>
+                    <article class="reflection-panel" id="reflection-final">
+                        <h3>Final Term Reflection</h3>
+                        <div class="reflection-panel__body">
+                            <p>
+                                The final term brought everything together. We worked on comprehensive projects that integrated all the concepts learned throughout the semester. This period was challenging but incredibly rewarding as I saw how individual programming concepts combine to create functional, real-world applications.
+                            </p>
+                            <p>
+                                One significant learning was understanding the importance of planning and design before coding. Taking time to plan the architecture, design the database schema, and outline the logic saved considerable time during implementation. I also learned the value of documentation and writing clear comments to help future developers (including myself) understand the code.
+                            </p>
+                            <p>
+                                Looking back at my journey through Computer Programming 1, I've grown significantly as a programmer. I've learned not just the technical skills but also the mindset of a developer—continuous learning, attention to detail, and the ability to break down complex problems into manageable parts. I'm excited to apply these skills in more advanced courses and real-world projects. This semester has been transformative, and I'm confident in my foundation for future programming endeavors.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/navigation.js"></script>
+    <script src="js/pdf-viewer.js"></script>
+    <script src="js/video-player.js"></script>
+    <script src="js/cursor-3d.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
