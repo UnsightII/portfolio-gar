@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Objects</title>
+  </head>
+
+  <body>
+    <script>
+      const product1 = {
+        name: 'mouse',
+        price: 100
+      };
+
+      const product2 = {
+        name: 'mouse',
+        price: 100
+      };
+
+      /*const product2 = {
+        name: 'charger',
+        price: 350
+      };
+
+      /*function comparePrice(product1,product2){
+        let result = ' ';
+        if(product1.price > product2.price){
+          result = 'Product1 is much expensive';
+        }else if(product1.price < product2.price){
+          result = 'Product1 is less expensive';
+        }else{
+          result = 'Both are same price';
+        }
+        return result;
+      }
+      console.log(comparePrice(product1,product2))*/
+
+      
+      function isSameProduct(product1,product2){
+        return product1.name === product2.name && product1.price === product2.price;
+      }
+
+      console.log(isSameProduct(product1,product2));
+
+      let upperCase = 'HELLO WORLD';
+      let lowerCase = upperCase.toLowerCase();
+      let repeat = upperCase.repeat(2);
+
+      console.log(lowerCase);
+      console.log(repeat);
+
+
+    </script>
+  </body>
+
+
+</html>
+    
